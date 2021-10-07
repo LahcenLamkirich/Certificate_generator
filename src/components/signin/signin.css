@@ -1,0 +1,117 @@
+.Container {
+    min-height : 692px ;
+    position : fixed ; 
+    bottom : 0 ; 
+    left : 0 ; 
+    right : 0 ; 
+    top : 0 ; 
+    z-index : 0 ; 
+    overflow : hidden ; 
+    background :#127a75;
+}
+
+.FormWrap {
+    height : 100% ; 
+    display : flex ; 
+    flex-direction : column ; 
+    justify-content : center ; 
+
+    @media screen and (max-width : 400px) {
+        height : 80% ; 
+    }
+}
+
+.Icon {
+    margin-left : 32px ; 
+    margin-top : 32px ;
+    text-decoration : none ;
+    color : white ; 
+    font-weight : 900 ; 
+    font-size : 28px ; 
+
+    @media screen and (max-width : 400px){
+        margin-left : 16px ; 
+        margin-top : 8px ;
+
+    }
+
+}
+
+.Icon:hover {
+    color : white ;
+}
+
+.FormContent {
+    margin-top: -90px;
+    height : 100% ; 
+    display : flex ; 
+    flex-direction : column ; 
+    justify-content : center ; 
+
+    @media screeen and (max-width : 480px){
+        padding : 10px; 
+    }
+}
+
+.Form {
+    background : #010101 ; 
+    max-width: 400px ;
+    height : auto ; 
+    z-index: 1 ; 
+    display : grid ; 
+    margin : 0 auto ; 
+    padding : 80px 32px ; 
+    border-radius : 4px ;
+    box-shadow : 0 1px 3px rgba(0,0,0,0.9);
+
+    @media screen and (max-width: 400px) {
+        padding : 32px 32px ; 
+    }
+}
+
+.FormH1 {
+    margin-bottom : 40px ; 
+    color : #fff ; 
+    font-size : 20px ; 
+    font-weight : 400 ;
+    text-align : center ; 
+}
+
+.FormLabel {
+    margin-bottom : 8px ; 
+    font-size : 14px ; 
+    color : #fff ; 
+} 
+
+.FormInput {
+    padding : 16px 16px ; 
+    margin-bottom : 32px ;
+    border : none ; 
+    border-radius : 4px ;
+}
+
+.FormButton {
+    font-family : monospace ; 
+    background : #20B2AA ; 
+    padding : 16px 0 ; 
+    border: none ; 
+    border-radius : 4px ;
+    color : white ; 
+    font-size : 20px ;
+    cursor : pointer ; 
+}
+
+.Text {
+    text-align : center ; 
+    margin-top : 24px ;
+    color : white ; 
+    font-size : 14px ;
+}
+
+.FormErreur {
+    text-align : center ; 
+    color : red ; 
+    margin-bottom : 18px;
+    font-size : 20px;
+    text-decoration : underline ;
+}
