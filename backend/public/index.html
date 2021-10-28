@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="http://localhost:3333/participants/add" enctype="multipart/form-data">
+        <div>
+            <input type="text" name="formationName"><br><br>
+          <label for="file">Sélectionner le fichier à envoyer</label>
+          <input type="file" id="file" name="file" accept=".xlsx"><br><br>
+          <input type="submit" value="Upload">
+        </div>
+    </form>
+    <script src="./public/javascripts/index.js"></script>
+</body>
+</html>

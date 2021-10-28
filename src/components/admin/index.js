@@ -79,7 +79,6 @@ const Admin = () => {
     }
 
     // the useEffect of get users : 
-
     useEffect(() => {
       getUserData() ;
     },[])
@@ -128,7 +127,6 @@ const Admin = () => {
       setUser(user)
     } 
 
-
     // delete use : 
 
     const onClickDelete = (id, index) => {
@@ -152,7 +150,7 @@ const Admin = () => {
         )
 
     const Notify = (message) => toast.success(message, {position: "bottom-center"}); // to seee
-    const NotifySuccess = () => toast.success("User Deleted succesfully !", {position: "bottom-center"}, { delay: 1000 }) ;
+    const NotifySuccess = () => toast.error("User Deleted succesfully !", {position: "bottom-center"}, { delay: 1000 }) ;
 
     return(
       <>
@@ -170,11 +168,10 @@ const Admin = () => {
                             <label className="FormLabel" htmlFor="for"> EXEL FILE : </label>
                             <input className="FormInput" id="filee" type="file" onChange={changeFiles} placeholder="EXCEL FILE" accept=".xlsx" required />
                             <label className="FormLabel" htmlFor="for"> CERTIFICAT IMAGE : </label>
-                            <input className="FormInput" id="filee" type="file" onChange={changeImg} placeholder="CERTIFICAT IMAGE" accept=".jpg" required />
+                            <input className="FormInput" id="filee" type="file" onChange={changeImg} placeholder="CERTIFICAT IMAGE" accept=".jpg,.jpeg" required />
                             <button className="FormButton" type="submit" onClick={onClickSend}> SEND </button>
                         </div>
                     </div> 
-
 
                     <select className="optionS" value={formationSelected} onChange={onChangeFormationSelected}>
                         { formationsName.map( 
