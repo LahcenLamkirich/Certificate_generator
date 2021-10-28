@@ -44,15 +44,12 @@ const SingIn = () => {
                     //window.location = "/user";
                     setShowResults(false)
                     history.push("/user");
-                    // console.log("User") 
-                    
-
+                    console.log("User") 
                 } else{
                     //window.location = "/admin";
                     setShowResults(false)
                     history.push("/admin");
-                    // console.log("admin")
-                    
+                    console.log("admin")
                 }
             }
         }).catch(err =>{
@@ -60,6 +57,7 @@ const SingIn = () => {
         }) 
         
     }
+
 
     const Results = () => (
             <>
