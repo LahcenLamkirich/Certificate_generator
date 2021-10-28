@@ -13,9 +13,7 @@ const User = () => {
 
         axios.get('http://localhost:3333/participants/findFormations') 
         .then(resp =>{
-            console.log("Le nom de la formation est " , resp.data); 
             setFormationsName(resp.data); // the change is here !!
-
         }).catch(err =>{
             alert("Try Again !!");          
         })
