@@ -13,6 +13,7 @@ const User = () => {
     // the use effect 
     useEffect(()=>{
         setFormationsName(JSON.parse(localStorage.getItem('formations')));
+        
     },[])
 
 
