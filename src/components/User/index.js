@@ -1,5 +1,6 @@
 import React, {useState, useEffect /*useRef*/} from 'react'
 import NavBar from '../admin/navAdmin'
+import './user.css';
 //import coverr from './coverr.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios' 
@@ -35,7 +36,7 @@ const User = () => {
                                         />
                                         <div className="card-body">
                                             <h5 className="card-title" style={{textAlign: 'center'}}> The Formation is : <span style = {{color: "#20B2AA", fontWeight: "bold", background: "white"}}> {formation} </span></h5>
-                                            <a href="#!" className="btn btn-primary" style={{marginLeft: '35%'}}> Downolad </a>
+                                            <button href="https://www.npmjs.com/package/react-pdf" className="btn btn-primary" style={{marginLeft: '35%'}}> Downolad </button>
                                         </div>
                                     </div>
                                 </div>
