@@ -5,6 +5,7 @@ import './user.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios' 
 import { ToastContainer, toast } from 'react-toastify';
+import jsPDF from 'jspdf';
 //import { componentsToColor } from 'pdf-lib';
 
 const User = () => {
@@ -15,6 +16,19 @@ const User = () => {
     useEffect(()=>{
         setFormationsName(JSON.parse(localStorage.getItem('formations')));
     },[])
+
+    const pdfGenerate = () => {
+        console.log("the formation is ", formationsName)
+        var doc = new jsPDF('landscape', 'px', 'a4', 'false');
+        let image = `http://localhost:3333/images/${formationsName[2]}.jpg`
+        console.log(image)
+        doc.addImage(image, 'JPG', 65,20, 500, 400)
+        doc.setFont("Roboto")
+        doc.setFontSize(20)
+        doc.text("Mohamed Neddam", 260, 230,0)
+        doc.save("Mycertificat.pdf")
+
+    };
 
 
     return (
@@ -36,7 +50,7 @@ const User = () => {
                                         />
                                         <div className="card-body">
                                             <h5 className="card-title" style={{textAlign: 'center'}}> The Formation is : <span style = {{color: "#20B2AA", fontWeight: "bold", background: "white"}}> {formation} </span></h5>
-                                            <button href="https://www.npmjs.com/package/react-pdf" className="btn btn-primary" style={{marginLeft: '35%'}}> Downolad </button>
+                                            <button onClick={pdfGenerate} className="btn btn-primary" style={{marginLeft: '35%'}}> Downolad </button>
                                         </div>
                                     </div>
                                 </div>
