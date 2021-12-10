@@ -101,10 +101,10 @@ export const NavBtn = styled.nav`
 `;
 export const NavBtnLink = styled(LinkRouter) `
     border-radius: 30px ;
-    background: #20B2AA ; // this is the color we will use : lighseagreen
+    background: #F4234C ; // this is the color we will use : lighseagreen
     white-space: nowrap ; 
     padding: 10px 22px ; 
-    color : #010606 ; 
+    color : white ; 
     font-size: 16px ;
     font-weight:semi-bold;
     outline : none ;

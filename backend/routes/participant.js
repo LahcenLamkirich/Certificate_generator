@@ -53,7 +53,7 @@ function readFile(fileName){
 router.post("/add", verifyToken, upload.array('file'), (req, res)=>{
     jwt.verify(req.token, process.env.TOKEN_SECRET, (err,data)=>{
         if(err) 
-                console.log(err)
+            console.log(err)
         else{
             console.log(data)
             if(data.result.role == 'admin'){
@@ -121,6 +121,25 @@ router.delete("/delete/:id", (req, res)=>{
             }
         })
 })
+
+// admin route 
+
+// router.get('/admin', function(req, res) {
+//     dbo.collection("participants").find({}, { projection: { _id: 0, nom: 1, role: 1 } }).toArray(function(err, result) {
+//         if(err)
+//             res.s    end(err)
+//         else {
+//             // result.forEach(element => {
+//             //     if(element.role == 'admin')
+//             //         res.status(200).send(element.nom);
+//             // });
+//             for(let i = 0 ; i < result.length; i++){
+//                 if(result[i].role == 'admin')
+//                     res.status(200).send(result[i].nom) ;
+//             }            
+//         }
+//     });
+//   });
 
 router.post("/findFormationsParticiper", (req, res)=>{
     if(req.body.nom && req.body.prenom){

@@ -3,22 +3,18 @@ import NavBar from '../admin/navAdmin'
 //import coverr from './coverr.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios' 
+import { ToastContainer, toast } from 'react-toastify';
 //import { componentsToColor } from 'pdf-lib';
 
 const User = () => {
 
     const [formationsName, setFormationsName] = useState([])
-    
+    const NotifyUser = (message) => toast.success(message, {position: "bottom-center"}, { delay: 100 })
+    // the use effect 
     useEffect(()=>{
-
-        axios.get('http://localhost:3333/participants/findFormations') 
-        .then(resp =>{
-            setFormationsName(resp.data); // the change is here !!
-        }).catch(err =>{
-            alert("Try Again !!");          
-        })
-
+        setFormationsName(JSON.parse(localStorage.getItem('formations')));
     },[])
+
 
     return (
         <div>
@@ -26,9 +22,9 @@ const User = () => {
 
                 <div className="container" style={{width: "100%"}}>
                     <div className="row">
-                        {formationsName.map(formation => {
+                        {formationsName.map((formation, index) => {
                             return (
-                                <div className="col-sm-4">
+                                <div className="col-sm-4" key={index}> 
                                     <div style={{padding: "10px"}}></div>
                                     <div className="card">
                                         <img

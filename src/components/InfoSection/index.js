@@ -6,7 +6,6 @@ TextWrapper, TopLine, Heading, Subtitle, BtnWrap, Img} from './InfoElements'
 const InfoSection = ({lightBg, id, imgStart, topLine, lightText,headline,primary, dark, dark2, img, darkText, description, buttonLabel, alt }) => {
     return (
         <>
-           
             <InfoContainer lightBg = {lightBg} id={id}>
                 <InfoWrapper>
                     <InfoRow imgStart={imgStart}>

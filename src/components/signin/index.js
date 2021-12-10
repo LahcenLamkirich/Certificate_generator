@@ -2,7 +2,8 @@ import React,{ useState } from 'react' ;
 import axios from 'axios';
 import { Link, useHistory} from 'react-router-dom'
 import './signin.css' ;
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import User from '../User/index';
 
 const SingIn = () => {
@@ -10,6 +11,9 @@ const SingIn = () => {
     const [showResults, setShowResults] = useState(false)
     const [erreur, setErreur] = useState("")
     const history = useHistory();
+    // la notification:
+    const Notify = (message) => toast.error(message, {position: "top-center"}); // to seee
+    //const NotifySuccess = () => toast.error("User Deleted succesfully !", {position: "bottom-center"}, { delay: 1000 }) ;
 
     const OnChangeNom = (e)=>{
         setUser({
@@ -27,6 +31,10 @@ const SingIn = () => {
     const setToken = (token) => {
         localStorage.setItem("token", token);
     }
+    const setFormations = (formations)=> {
+        localStorage.setItem("formations", JSON.stringify(formations));
+        console.log("formation", formations)
+    }
 
     const onClickLogin = ()=>{
         axios.post(`http://localhost:3333/users/signIn`,user) 
@@ -36,13 +44,15 @@ const SingIn = () => {
                     nom: "",
                     prenom: ""
                 })
-                setErreur(resp.data.ERROR);
+                //setErreur(resp.data.ERROR);
                 setShowResults(true)
+                Notify(resp.data.ERROR)
             } else{
                 setToken(resp.data.token)
                 if(!resp.data.role.localeCompare("user")){
                     //window.location = "/user";
                     setShowResults(false)
+                    setFormations(resp.data.formationsPrticiper)
                     history.push("/user");
                     console.log("User") 
                 } else{
@@ -67,12 +77,13 @@ const SingIn = () => {
 
     return (
         <>
+
             <div className="Container">
                 <div className="FormWrap">
                     <Link to="/" className="Icon"> JCI KENITRA </Link>                        
                     <div className="FormContent">
                         <div className="Form">
-                            <h1 className="FormH1">Sign In to Get your Certificate</h1>
+                            <h1 className="FormH1"> <strong>.. Connectez-vous pour obtenir votre certificat  .. </strong> </h1>
                             <div className="FormErreur">
                                 { showResults ? <Results /> : null }
                             </div>
@@ -81,7 +92,7 @@ const SingIn = () => {
                             <label className="FormLabel" htmlFor="for">NOM</label>
                             <input className="FormInput" type="text" value={user.nom} onChange={OnChangeNom} placeholder="Nom" required />
                             <button className="FormButton" type="submit" onClick={onClickLogin}>Login</button>
-                            <span className="Text">Forgot Password</span>
+                            <span className="Text"> Mot de passe oublié </span>
                         </div>
                     </div>
                 </div>

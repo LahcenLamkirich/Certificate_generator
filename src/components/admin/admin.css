@@ -190,6 +190,13 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    width: 80px;
     padding: 5px;
-    background-color: rgb(218, 52, 52);
+    border-radius: 20px;
+    background-color: #F4234C;
+    
+}
+
+.danger:hover {
+    background-color: #F4234C ;
 }

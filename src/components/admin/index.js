@@ -49,12 +49,14 @@ const Admin = () => {
     let [user, setUser] = useState([]) ;
     let [search, setSearch] = useState("") ;
     let classes = useStyles();
+    // let [admin, setAdmin] = useState("");
     // let [participantsByFormation, setParticipantsByFormation] = useState([])
     const [showResults, setShowResults] = useState(false)
     const [erreur, setErreur] = useState("")
-    // const [showToast, setShowToast] = useState(false)
+    const NotifyAdmin = (message) => toast.success(message, {position: "bottom-center"}, { delay: 100 })
 
     useEffect(()=>{
+      NotifyAdmin(`La page Admin`)
       axios.get('http://localhost:3333/participants/findFormations') 
       .then(resp =>{
           setFormationsName(resp.data);
@@ -63,6 +65,15 @@ const Admin = () => {
       })
   }, [])
 
+    // la declaration de la fonction getAdminName :
+
+    // const getAdminName = () => {
+    //     axios.get("http://localhost:3333/participants/admin")
+    //     .then(resp => {
+    //         setAdmin(resp.data) ;
+    //         console.log(resp.data) ;
+    //     })
+    // }
     // la declaration de la fonction : getUser()
 
     const getUserData = async () => {
@@ -222,7 +233,7 @@ const Admin = () => {
                           <StyledTableCell>{item.prenom}</StyledTableCell>
                           <StyledTableCell>{item.email} </StyledTableCell>
                           <StyledTableCell>{item.adresse}</StyledTableCell>
-                          <StyledTableCell><Button className="danger" onClick={()=> onClickDelete(item._id, index)}> DELETE </Button>{' '}</StyledTableCell>
+                          <StyledTableCell><Button className="danger" onClick={()=> onClickDelete(item._id, index)}><div class="icon"> <i class="fa fa-trash-o"> </i></div> DELETE </Button>{' '}</StyledTableCell>
                         </StyledTableRow>
                         )
                         })} 

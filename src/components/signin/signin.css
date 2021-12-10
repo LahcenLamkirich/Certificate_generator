@@ -34,7 +34,6 @@
         margin-top : 8px ;
 
     }
-
 }
 
 .Icon:hover {
@@ -42,6 +41,7 @@
 }
 
 .FormContent {
+    
     margin-top: -90px;
     height : 100% ; 
     display : flex ; 
@@ -54,6 +54,7 @@
 }
 
 .Form {
+    
     background : #010101 ; 
     max-width: 400px ;
     height : auto ; 
@@ -106,6 +107,7 @@
     margin-top : 24px ;
     color : white ; 
     font-size : 14px ;
+    opacity: 0.85;
 }
 
 .FormErreur {
