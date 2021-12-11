@@ -36,6 +36,14 @@ const SingIn = () => {
         console.log("formation", formations)
     }
 
+    const setName = (nom) => {
+        localStorage.setItem("nom", nom)
+    }
+
+    const setPrenom = (prenom) => {
+        localStorage.setItem("prenom" , prenom)
+    }
+
     const onClickLogin = ()=>{
         axios.post(`http://localhost:3333/users/signIn`,user) 
         .then((resp,res) => {
@@ -53,6 +61,7 @@ const SingIn = () => {
                     //window.location = "/user";
                     setShowResults(false)
                     setFormations(resp.data.formationsPrticiper)
+                  
                     console.log("resp data ", resp.data) 
                     history.push("/user");
                     console.log("User") 
