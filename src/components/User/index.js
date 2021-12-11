@@ -39,7 +39,7 @@ const User = () => {
         doc.setFont("Roboto")
         doc.setFontSize(20)
         doc.text(nom+" "+prenom, 260, 230,0)
-        doc.save("Mycertificat.pdf")
+        doc.save(nom+"_"+formation+".pdf");
     };
 
 
