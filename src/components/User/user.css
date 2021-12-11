@@ -11,3 +11,32 @@
 .container {
     padding: 2px 16px;
 }
+  
+  span.name {
+    margin-top: 10px;
+    position: relative;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    display: inline-block;
+  }
+  
+  /* We create a pseudo element and blur it using the SVG filter. We’ll grab the content from the custom HTML attribute. */
+  
+  span.name:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: attr(filter-content);
+  
+    filter: url(#motion-blur-filter);
+  }
+  
+  /* We hide the SVG filter element from the DOM as it would take up some space */
+  
+  svg {
+    display: none;
+  }

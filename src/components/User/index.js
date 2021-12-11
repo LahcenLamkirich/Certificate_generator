@@ -46,7 +46,14 @@ const User = () => {
     return (
         <div>
             <NavBar />
-
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+                    <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+                </filter>
+            </svg>
+            <div style={{textAlign: "center"}}>
+                <span className="name" filter-content="S">{nom} {prenom}</span>
+            </div>
                 <div className="container" style={{width: "100%"}}>
                     <div className="row">
                         {formationsName.map((formation, index) => {
