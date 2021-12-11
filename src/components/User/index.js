@@ -11,10 +11,15 @@ import jsPDF from 'jspdf';
 const User = () => {
 
     const [formationsName, setFormationsName] = useState([])
+    const [nom, setNom] = useState("")
+    const [prenom, setPrenom] = useState("")
+
     const NotifyUser = (message) => toast.success(message, {position: "bottom-center"}, { delay: 100 })
     // the use effect 
     useEffect(()=>{
         setFormationsName(JSON.parse(localStorage.getItem('formations')));
+        setNom(localStorage.getItem("nom"))
+        setPrenom(localStorage.getItem("prenom"))
     },[])
 
     // {
