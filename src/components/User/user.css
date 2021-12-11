@@ -13,7 +13,7 @@
 }
   
   span.name {
-    margin-top: 10px;
+    margin-top: 30px;
     position: relative;
     font-family: "Avenir Next", sans-serif;
     font-weight: 900;
@@ -22,6 +22,9 @@
     font-style: italic;
     letter-spacing: 0.05em;
     display: inline-block;
+    text-decoration:overline;
+    border-bottom: 2px solid black ;
+    
   }
   
   /* We create a pseudo element and blur it using the SVG filter. We’ll grab the content from the custom HTML attribute. */
