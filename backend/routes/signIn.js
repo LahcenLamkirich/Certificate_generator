@@ -19,7 +19,11 @@ router.post('/signIn', function(req, res) {
             
             if(result.role == 'user'){
               formationsPrticiper = await dbo.collection('participants').distinct("formationName", {nom: user.nom, prenom: user.prenom})
-              res.status(200).json({"token" : token, "role" : "user", "formationsPrticiper": formationsPrticiper});
+              // here i have tp get the name of the user : 
+              nom = await dbo.collection('participants').distinct("nom", {nom: user.nom, prenom: user.prenom})
+              prenom = await dbo.collection('participants').distinct("prenom", {nom: user.nom, prenom: user.prenom}) 
+              
+              res.status(200).json({"token" : token, "role" : "user", "formationsPrticiper": formationsPrticiper, "Nom": nom, "Prenom": prenom});
             }
             else {
                 res.status(200).json({"token" : token, "role" : "admin"});
