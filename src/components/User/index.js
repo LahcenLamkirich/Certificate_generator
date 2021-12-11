@@ -30,6 +30,7 @@ const User = () => {
     // }
 
     const pdfGenerate = ({formation}) => {
+        console.log("le nom et le prenom est : " , nom+" "+ prenom)
         console.log('>>', formation);
         console.log("the formation is ", formationsName)
         var doc = new jsPDF('landscape', 'px', 'a4', 'false');
@@ -37,7 +38,7 @@ const User = () => {
         doc.addImage(image, 'JPG', 65,20, 500, 400)
         doc.setFont("Roboto")
         doc.setFontSize(20)
-        doc.text("Mohamed Neddam", 260, 230,0)
+        doc.text(nom+" "+prenom, 260, 230,0)
         doc.save("Mycertificat.pdf")
     };
 

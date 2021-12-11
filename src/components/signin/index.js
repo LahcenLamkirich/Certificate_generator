@@ -61,9 +61,8 @@ const SingIn = () => {
                     //window.location = "/user";
                     setShowResults(false)
                     setFormations(resp.data.formationsPrticiper)
-                    setName(resp.data.nom)
-                    setPrenom(resp.data.prenom)
-                    console.log("resp data ", resp.data) 
+                    setName(resp.data.Nom)
+                    setPrenom(resp.data.Prenom)
                     history.push("/user");
                     console.log("User") 
                 } else{
