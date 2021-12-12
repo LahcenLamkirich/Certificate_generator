@@ -12,17 +12,17 @@ const Services = () => {
                     <ServicesCard>
                         <ServicesIcon src={icon1} />
                         <ServicesH2> Développement individuel </ServicesH2>
-                        <ServicesP>this is the resuce file to use in our ptoject </ServicesP>
+                        <ServicesP> </ServicesP>
                     </ServicesCard>
                     <ServicesCard>
                         <ServicesIcon src={icon2} />
                         <ServicesH2> Communautaire </ServicesH2>
-                        <ServicesP>this is the resuce file to use in our ptoject </ServicesP>
+                        <ServicesP> </ServicesP>
                     </ServicesCard>
                     <ServicesCard>
                         <ServicesIcon src={icon3} />
                         <ServicesH2> Relations internationales </ServicesH2>
-                        <ServicesP>this is the resuce file to use in our ptoject </ServicesP>
+                        <ServicesP> </ServicesP>
                     </ServicesCard>
                 </ServicesWrapper>
             </ServicesContainer>
