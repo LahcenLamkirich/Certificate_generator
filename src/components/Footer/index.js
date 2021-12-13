@@ -1,9 +1,11 @@
 import React from 'react'
 import {FooterContainer,FooterWrap,FooterLinksContainer,FooterLinksWrapper,FooterLinkItems,FooterLinkTitle,FooterLink,SocialMedia,SocialMediaWrap,SocialLogo,WebsiteRights,SocialIcons,SocialIconLink, NavLinks} from './FooterElements' 
-import { FaFacebook, FaYoutube, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaYoutube, FaInstagram, FaLinkedin, FaFacebook } from 'react-icons/fa'
+import { render } from 'react-dom'
+
 
 const Footer = () => {
-    return (
+        return (
         <FooterContainer id="contact">
             <FooterWrap>
                 <FooterLinksContainer>
@@ -14,13 +16,13 @@ const Footer = () => {
                     <SocialMediaWrap>
                         <SocialLogo>
                             <NavLinks to='home'>
-                                JCI KENITRA
+                                JCI KENITRA 
                             </NavLinks>
                         </SocialLogo>
-                        <WebsiteRights> JCI &copy; 2021 All Rights Reserved  </WebsiteRights>
+                        <WebsiteRights> JCI &copy; 2021 All Rights Reserved </WebsiteRights>
                         <SocialIcons>
                             <SocialIconLink href="//www.facebook.com/JCIKenitra" target="_blank" aria-label="Facebook">
-                                <FaFacebook />
+                                 <FaFacebook /> 
                             </SocialIconLink>
                             <SocialIconLink href="//www.instagram.com/jci.kenitra/" target="_blank" aria-label="Instagram">
                                 <FaInstagram />
@@ -38,6 +40,7 @@ const Footer = () => {
             </FooterWrap>
         </FooterContainer>
     )
+
 }
 
 export default Footer ;

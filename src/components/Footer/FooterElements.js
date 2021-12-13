@@ -117,12 +117,13 @@ export const SocialIcons = styled.div`
     display: flex ;
     justify-content : space-between ; 
     align-items : center ; 
-    width : 240px ; 
+    width : 240px ;    
+    
 ` ;
 
 export const SocialIconLink = styled.a`
+    color: black ;
     margin-top:15%;
-    color : black ;
     font-size : 24px ; 
     &:hover {
         color : #20B2AA ;
@@ -145,3 +146,7 @@ export const NavLinks = styled(LinkScroll)`
         color : #20B2AA ;
     }
 ` ;
+
+
+
+

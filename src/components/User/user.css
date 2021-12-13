@@ -39,7 +39,7 @@
   }
   
   /* We hide the SVG filter element from the DOM as it would take up some space */
-  
+/*   
   svg {
     display: none;
-  }
+  } */
