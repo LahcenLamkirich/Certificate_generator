@@ -185,6 +185,7 @@ const Admin = () => {
                     </div> 
 
                     <select className="optionS" value={formationSelected} onChange={onChangeFormationSelected}>
+                      <option value="" key=""></option>
                         { formationsName.map( 
                           (formation) =>{
                             return (
