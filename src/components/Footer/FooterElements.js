@@ -123,7 +123,7 @@ export const SocialIcons = styled.div`
 
 export const SocialIconLink = styled.a`
     color: black ;
-    margin-top:15%;
+    margin-top:12%;
     font-size : 24px ; 
     &:hover {
         color : #20B2AA ;
