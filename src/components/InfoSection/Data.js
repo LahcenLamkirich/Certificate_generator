@@ -48,7 +48,3 @@ export const homeObjectTwo = {
 //     primary : true , 
 //     darkText: false
 // }
-
-export const homeObjectThree = {
-    id: 'services' ,
-}

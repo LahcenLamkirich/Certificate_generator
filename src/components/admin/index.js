@@ -12,7 +12,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.css';
 
 
   const StyledTableCell = withStyles((theme) => ({
@@ -41,6 +41,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 toast.configure();
+
 const Admin = () => {
 
     let data = new FormData();
@@ -65,16 +66,6 @@ const Admin = () => {
       })
   }, [])
 
-    // la declaration de la fonction getAdminName :
-
-    // const getAdminName = () => {
-    //     axios.get("http://localhost:3333/participants/admin")
-    //     .then(resp => {
-    //         setAdmin(resp.data) ;
-    //         console.log(resp.data) ;
-    //     })
-    // }
-    // la declaration de la fonction : getUser()
 
     const getUserData = async () => {
         try {
@@ -185,7 +176,7 @@ const Admin = () => {
                     </div> 
 
                     <select className="optionS" value={formationSelected} onChange={onChangeFormationSelected}>
-                      <option value="" key=""></option>
+                      <option value="..." key=""> Formation ... </option>
                         { formationsName.map( 
                           (formation) =>{
                             return (
@@ -197,8 +188,8 @@ const Admin = () => {
                         <input 
                         className="FormInput" id="fileeN"
                         type="text" 
-                          placeholder="Search BY NOM !"
-                          onChange={e => {
+                        placeholder="Search BY NOM !"
+                        onChange={e => {
                             setSearch(e.target.value) ;
                           }}
                         />
@@ -234,7 +225,7 @@ const Admin = () => {
                           <StyledTableCell>{item.prenom}</StyledTableCell>
                           <StyledTableCell>{item.email} </StyledTableCell>
                           <StyledTableCell>{item.adresse}</StyledTableCell>
-                          <StyledTableCell><Button className="danger" onClick={()=> onClickDelete(item._id, index)}><div class="icon"> <i class="fa fa-trash-o"> </i></div> DELETE </Button>{' '}</StyledTableCell>
+                          <StyledTableCell><Button className="danger" onClick={()=> onClickDelete(item._id, index)}>DELETE </Button>{' '}</StyledTableCell>
                         </StyledTableRow>
                         )
                         })} 
