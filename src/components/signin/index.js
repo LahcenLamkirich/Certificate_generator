@@ -4,9 +4,11 @@ import { Link, useHistory} from 'react-router-dom'
 import './signin.css' ;
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from '../Footer/index' ;
 // import User from '../User/index';
 
 const SingIn = () => {
+
     const [user, setUser] = useState({nom:"", prenom:""})
     const [showResults, setShowResults] = useState(false)
     const [erreur, setErreur] = useState("")
@@ -87,12 +89,12 @@ const SingIn = () => {
 
     return (
         <>
-
-            <div className="Container">
+           
+            <div className="Container" style={{background: 'black'}}>
+            <div style={{marginTop: "2%"}}><Link to="/" className="Icon" > JCI KENITRA </Link> </div> 
                 <div className="FormWrap">
-                    <Link to="/" className="Icon"> JCI KENITRA </Link>                        
                     <div className="FormContent">
-                        <div className="Form">
+                        <div className="Form" >
                             <h1 className="FormH1"> <strong>.. Connectez-vous pour obtenir votre certificat  .. </strong> </h1>
                             <div className="FormErreur">
                                 { showResults ? <Results /> : null }
@@ -106,7 +108,10 @@ const SingIn = () => {
                         </div>
                     </div>
                 </div>
+                <div className='space' style={{marginTop: "7%"}}></div>
             </div>
+            
+            <Footer />
         </>
     )
 }
