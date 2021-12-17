@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios' 
 import { ToastContainer, toast } from 'react-toastify';
 import jsPDF from 'jspdf';
+
 //import { componentsToColor } from 'pdf-lib';
 
 const User = () => {
@@ -75,6 +76,7 @@ const User = () => {
                     </div> 
                     
                 </div>
+                
         </div>
     )
 }

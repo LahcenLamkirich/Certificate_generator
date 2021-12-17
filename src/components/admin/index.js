@@ -125,6 +125,7 @@ const Admin = () => {
     const onChangeFormationSelected = async (e) =>{
       formationSelected = e.target.value;
       const data = await axios.get(`http://localhost:3333/participants/findByFormation/${formationSelected}`);
+      console.log("=>", formationSelected);
       user = data.data;
       setUser(user)
     } 
